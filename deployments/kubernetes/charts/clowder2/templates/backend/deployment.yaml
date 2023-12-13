@@ -77,15 +77,15 @@ spec:
             - name: auth_client_id
               value: {{ .Values.keycloak.clientid }}
             - name: auth_redirect_uri
-              value: https://{{ .Values.hostname }}/api/v2/auth
+              value: {{ .Values.keycloak.callback_url}}
             - name: auth_url
-              value: https://{{ .Values.keycloak.hostname }}/auth/realms/{{ .Values.keycloak.realm }}/protocol/openid-connect/auth?client_id={{ .Values.keycloak.clientid }}&redirect_uri=https://clowder2-test.icecube.aq/api/v2/auth&response_type=code&scope=openid%20email
+              value: {{ .Values.keycloak.auth_url }}?client_id={{ .Values.keycloak.clientid }}&redirect_uri=$(auth_redirect_uri)&response_type=code&scope=openid%20email
             - name: oauth2_scheme_auth_url
-              value: https://{{ .Values.keycloak.hostname }}/auth/realms/{{ .Values.keycloak.realm }}/protocol/openid-connect/auth?client_id={{ .Values.keycloak.clientid }}&redirect_uri=https://clowder2-test.icecube.aq/api/v2/auth&response_type=code&scope=openid%20email
+              value: {{ .Values.keycloak.auth_url }}?client_id={{ .Values.keycloak.clientid }}&redirect_uri=$(auth_redirect_uri)&response_type=code&scope=openid%20email
             - name: auth_register_url
               value: https://{{ .Values.keycloak.hostname }}/auth/realms/{{ .Values.keycloak.realm }}/protocol/openid-connect/registrations?client_id={{ .Values.keycloak.clientid }}
             - name: auth_token_url
-              value: https://{{ .Values.keycloak.hostname }}/auth/realms/{{ .Values.keycloak.realm }}/protocol/openid-connect/token
+              value: {{ .Values.keycloak.token_url }}
             - name: auth_server_url
               value: https://{{ .Values.keycloak.hostname }}/auth/
             - name: keycloak_base
