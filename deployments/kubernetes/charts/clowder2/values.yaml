@@ -214,16 +214,6 @@ extractors:
 elasticsearch:
   clusterName: clowder2
 
-  esJvmOptions: "-XX:MaxDirectMemorySize=2g"
-
-  resources:
-    requests:
-      cpu: "1000m"
-      memory: "2Gi"
-    limits:
-      cpu: "1000m"
-      memory: "2Gi"
-
   master:
     persistence:
       storageClass: csi-cephfs-sc
@@ -232,6 +222,14 @@ elasticsearch:
     persistence:
       storageClass: csi-cephfs-sc
       size: 8Gi
+  coordinating:
+    extraEnvVars: [ES_JAVA_OPTS="$ES_JAVA_OPTS -XX:MaxDirectMemorySize=512m]
+    resources:
+      requests:
+        memory: "512Mi"
+      limits:
+        memory: "512Mi"
+
 
 # ----------------------------------------------------------------------
 # KEYCLOAK
