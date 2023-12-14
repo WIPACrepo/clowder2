@@ -184,9 +184,29 @@ extractors:
 #    # env:
 #    #   - name: extractor.bump.sh
 #    #     value: "bar"
+  wordcount:
+    image: clowder/extractors-wordcount:latest
+    enabled: false
+    replicaCount: 0
+  image-preview:
+    image: clowder/extractors-image-preview:latest
+    enabled: false
+    replicaCount: 0
+  image-metadata:
+    image: clowder/extractors-image-metadata:latest
+    enabled: false
+    replicaCount: 0
+  audio-preview:
+    image: clowder/extractors-audio-preview:latest
+    enabled: false
+    replicaCount: 0
   file-digest:
     image: i3registry.icecube.aq/extractors-digest-local:0.1
     imagePullSecrets: regcred-aq
+  geotiff-preview:
+    image: clowder/extractors-geotiff-preview:latest
+    enabled: false
+    replicaCount: 0
 
 # ----------------------------------------------------------------------
 # ELASTICSEARCH
