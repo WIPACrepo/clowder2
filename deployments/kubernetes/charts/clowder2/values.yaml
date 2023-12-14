@@ -214,7 +214,7 @@ extractors:
 elasticsearch:
   clusterName: clowder2
   
-  extraEnvVars: ['ES_JAVA_OPTS="$ES_JAVA_OPTS -XX:MaxDirectMemorySize=2g']
+  extraEnvVars: [es-additional-env]
 
   master:
     persistence:
