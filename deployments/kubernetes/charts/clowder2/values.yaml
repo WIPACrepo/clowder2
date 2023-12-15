@@ -247,7 +247,7 @@ keycloak:
   clientid: clowder2-backend
   redirect_uri: https://clowder2-test.icecube.aq/api/v2/auth
   auth_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/auth
-  token_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/userinfo
+  token_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/token
   userinfo_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/userino
 
 # ----------------------------------------------------------------------
