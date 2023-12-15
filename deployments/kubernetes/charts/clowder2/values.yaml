@@ -245,7 +245,7 @@ keycloak:
   hostname: keycloak.icecube.wisc.edu/auth
   realm: IceCube
   clientid: clowder2-backend
-  redirect_uri: https://clowder2.icecube.aq/api/v2/auth
+  redirect_uri: https://clowder2-test.icecube.aq/api/v2/auth
   auth_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/auth
   token_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/userinfo
   userinfo_url: https://keycloak.icecube.wisc.edu/auth/realms/IceCube/protocol/openid-connect/userino
