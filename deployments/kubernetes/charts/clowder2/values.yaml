@@ -215,8 +215,8 @@ elasticsearch:
   clusterName: clowder2
   
   extraEnvVars: 
-    - name: ES_JAVA_OPTS
-      value: "$ES_JAVA_OPTS -XX:MaxDirectMemorySize=2g"
+    - name: ELASTICSEARCH_JAVA_OPTS
+      value: "$ELASTICSEARCH_JAVA_OPTS -XX:MaxDirectMemorySize=2g"
 
   master:
     persistence:
