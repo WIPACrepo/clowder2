@@ -242,7 +242,7 @@ elasticsearch:
 # KEYCLOAK
 # ----------------------------------------------------------------------
 keycloak:
-  hostname: keycloak.icecube.wisc.edu/auth
+  hostname: keycloak.icecube.wisc.edu/auth/
   realm: IceCube
   clientid: clowder2-backend
   redirect_uri: https://clowder2-test.icecube.aq/api/v2/auth
