@@ -94,11 +94,13 @@ minio:
   ingress:
     enabled: true
     hostname: minio.clowder2.localhost
+    ingressClassName: clowder2-test
 
   # enable ingress for api
   apiIngress:
     enabled: true
     hostname: minio-api.clowder2.localhost
+    ingressClassName: clowder2-test
 
   # enabled distributed mode (or standalone)
 #  mode: distributed
