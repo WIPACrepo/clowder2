@@ -93,14 +93,20 @@ minio:
   # enable ingress for webui
   ingress:
     enabled: true
-    hostname: minio.clowder2.localhost
+    hostname: clowder2-minio.icecube.aq
     ingressClassName: clowder2-test
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-dns01-prod"
+    tls: true
+    
 
   # enable ingress for api
   apiIngress:
-    enabled: true
-    hostname: minio-api.clowder2.localhost
+    enabled: false
+    hostname: clowder2-minioapi.icecube.aq
     ingressClassName: clowder2-test
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-dns01-prod"
 
   # enabled distributed mode (or standalone)
 #  mode: distributed
@@ -159,7 +165,7 @@ rabbitmq:
 
   # enable webfrontend
   ingress:
-    enabled: true
+    enabled: false
     hostname: rabbitmq.clowder2.localhost
 
   persistence:
