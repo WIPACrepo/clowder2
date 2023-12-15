@@ -214,7 +214,7 @@ extractors:
 elasticsearch:
   clusterName: clowder2
   
-  extraEnvVars: [es-additional-env]
+  extraEnvVarsCM: [es-additional-env]
 
   master:
     persistence:
