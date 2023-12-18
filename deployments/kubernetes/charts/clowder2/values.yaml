@@ -229,6 +229,13 @@ elasticsearch:
     persistence:
       storageClass: csi-cephfs-sc
       size: 8Gi
+    extraVolumeMounts:
+      - name: es-max-direct-memory-2g
+        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
+    extraVolumes:
+      - name: es-max-direct-memory-2g
+        configMap:
+          name: es-max-direct-memory-2g
   data:
     resource:
       requests:
@@ -236,11 +243,32 @@ elasticsearch:
     persistence:
       storageClass: csi-cephfs-sc
       size: 8Gi
+    extraVolumeMounts:
+      - name: es-max-direct-memory-2g
+        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
+    extraVolumes:
+      - name: es-max-direct-memory-2g
+        configMap:
+          name: es-max-direct-memory-2g
   coordinating:
     resource:
       requests:
         memory: 512Mi
+    extraVolumeMounts:
+      - name: es-max-direct-memory-1g
+        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
+    extraVolumes:
+      - name: es-max-direct-memory-1g
+        configMap:
+          name: es-max-direct-memory-1g
   ingest:
+    extraVolumeMounts:
+      - name: es-max-direct-memory-1g
+        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
+    extraVolumes:
+      - name: es-max-direct-memory-1g
+        configMap:
+          name: es-max-direct-memory-1g
     resource:
       requests:
         memory: 512Mi
