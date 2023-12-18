@@ -59,7 +59,7 @@ geoserver:
   username: admin
   password: admin
   workspace: clowder2
-  url: http://clowder2-geoserver:8080/geoserver/
+  url: http://clowder2-test.icecube.aq/geoserver/
   replicas: 1
   image:
     repository: kartoza/geoserver
@@ -92,7 +92,7 @@ minio:
 
   # enable ingress for webui
   ingress:
-    enabled: true
+    enabled: false
     hostname: clowder2-minio.icecube.aq
     ingressClassName: clowder2-test
     annotations:
