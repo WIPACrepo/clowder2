@@ -229,13 +229,9 @@ elasticsearch:
     persistence:
       storageClass: csi-cephfs-sc
       size: 8Gi
-    extraVolumeMounts:
-      - name: es-max-direct-memory-2g
-        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
-    extraVolumes:
-      - name: es-max-direct-memory-2g
-        configMap:
-          name: es-max-direct-memory-2g
+    initScripts: |
+      #!/bin/sh
+      echo "-XX:MaxDirectMemorySize=2g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   data:
     resource:
       requests:
@@ -243,35 +239,23 @@ elasticsearch:
     persistence:
       storageClass: csi-cephfs-sc
       size: 8Gi
-    extraVolumeMounts:
-      - name: es-max-direct-memory-2g
-        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
-    extraVolumes:
-      - name: es-max-direct-memory-2g
-        configMap:
-          name: es-max-direct-memory-2g
+    initScripts: |
+      #!/bin/sh
+      echo "-XX:MaxDirectMemorySize=2g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   coordinating:
     resource:
       requests:
         memory: 512Mi
-    extraVolumeMounts:
-      - name: es-max-direct-memory-1g
-        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
-    extraVolumes:
-      - name: es-max-direct-memory-1g
-        configMap:
-          name: es-max-direct-memory-1g
+    initScripts: |
+      #!/bin/sh
+      echo "-XX:MaxDirectMemorySize=1g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   ingest:
-    extraVolumeMounts:
-      - name: es-max-direct-memory-1g
-        mountPath: /opt/bitnami/elasticsearch/config/jvm.options.d/
-    extraVolumes:
-      - name: es-max-direct-memory-1g
-        configMap:
-          name: es-max-direct-memory-1g
     resource:
       requests:
         memory: 512Mi
+    initScripts: |
+      #!/bin/sh
+      echo "-XX:MaxDirectMemorySize=1g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
 
 
 # ----------------------------------------------------------------------
