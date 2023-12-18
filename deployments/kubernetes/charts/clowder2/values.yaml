@@ -223,7 +223,7 @@ elasticsearch:
   clusterName: clowder2
 
   master:
-  heapSize: 512Mi
+    heapSize: 512Mi
     resource:
       requests:
         memory: 1Gi
