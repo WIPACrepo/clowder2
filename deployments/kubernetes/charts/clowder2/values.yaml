@@ -223,6 +223,7 @@ elasticsearch:
   clusterName: clowder2
 
   master:
+  heapSize: 512Mi
     resource:
       requests:
         memory: 1Gi
@@ -233,6 +234,7 @@ elasticsearch:
       #!/bin/sh
       echo "-XX:MaxDirectMemorySize=2g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   data:
+    heapSize: 512Mi
     resource:
       requests:
         memory: 1Gi
@@ -243,6 +245,7 @@ elasticsearch:
       #!/bin/sh
       echo "-XX:MaxDirectMemorySize=2g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   coordinating:
+    heapSize: 256Mi
     resource:
       requests:
         memory: 512Mi
@@ -250,6 +253,7 @@ elasticsearch:
       #!/bin/sh
       echo "-XX:MaxDirectMemorySize=1g" > /opt/bitnami/elasticsearch/config/jvm.options.d/directmemory.options
   ingest:
+    heapSize: 256Mi
     resource:
       requests:
         memory: 512Mi
